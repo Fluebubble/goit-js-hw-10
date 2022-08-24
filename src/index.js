@@ -15,7 +15,6 @@ const DEBOUNCE_DELAY = 300;
 refs.inputField.addEventListener('input', debounce(fetchByCountryName, DEBOUNCE_DELAY));
 
 function fetchByCountryName(event) {
-  console.log(event.target.value);
   if (event.target.value.trim().length === 0) {
     return;
   } else {
