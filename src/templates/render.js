@@ -11,7 +11,7 @@ export function renderCountryList(countryList) {
 
 export function renderCountry(countryList) {
   let languages = [];
-  for (language in countryList[0].languages) {
+  for (let language in countryList[0].languages) {
     languages.push(countryList[0].languages[language]);
   }
   languages = languages.join(', ');
