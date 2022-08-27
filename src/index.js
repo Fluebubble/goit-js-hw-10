@@ -3,6 +3,8 @@ import { fetchCountries } from './fetchCountries';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import { renderCountry, renderCountryList } from './templates/render';
+import countryListTemplate from "./templates/countryListTemplate.hbs";
+// import oneCountryTemplate from "./templates/oneCountryTemplate.hbs";
 
 const refs = {
   inputField: document.querySelector('#search-box'),
@@ -12,7 +14,10 @@ const refs = {
 
 const DEBOUNCE_DELAY = 300;
 
-refs.inputField.addEventListener('input', debounce(fetchByCountryName, DEBOUNCE_DELAY));
+refs.inputField.addEventListener(
+  'input',
+  debounce(fetchByCountryName, DEBOUNCE_DELAY)
+);
 
 function fetchByCountryName(event) {
   if (event.target.value.trim().length === 0) {
